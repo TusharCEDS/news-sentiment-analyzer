@@ -1,2 +1,4 @@
 .env
 node_modules/
+python_work/data/training.1600000.processed.noemoticon.csv
+python_work/data/news_features.csv
