@@ -15,7 +15,8 @@ html, body {
 }
 
 .light-theme {
-    --background: url("https://tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg");
+    /* --background: url("https://tailwindcss.com/_next/static/media/hero@75.b2469a49.jpg"); */
+    background-image: url(assets/back2.jpg);
     --primary: #F8FAFC;
     --secondary: #0F172A;
     --txt: #000;
@@ -28,7 +29,8 @@ html, body {
 }
 
 .dark-theme {
-    --background: url("https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg");
+    /* --background: url("https://tailwindcss.com/_next/static/media/hero-dark@90.dba36cdf.jpg"); */
+    background-image: url(assets/back.jpg);
     --primary: rgb(30,41,59);
     --secondary: #D5DDF0;
     --txt: #fff;

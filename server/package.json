@@ -10,9 +10,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tensorflow/tfjs": "^4.22.0",
     "axios": "^1.6.8",
     "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
-  }
+    "express": "^4.19.2",
+    "server": "file:"
+  },
+  "type": "commonjs"
 }
