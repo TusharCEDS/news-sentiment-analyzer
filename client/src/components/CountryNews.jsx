@@ -26,7 +26,7 @@ function CountryNews() {
   useEffect(() => {
     setIsLoading(true);
     setError(null);
-    fetch(`https://news-aggregator-dusky.vercel.app/country/${params.iso}?page=${page}&pageSize=${pageSize}`)
+    fetch(`http://localhost:3001/api/country/${params.iso}?page=${page}&pageSize=12`)
       .then((response) => {
         if (response.ok) {
           return response.json();

@@ -1,4 +1,28 @@
+# Environment files
 .env
+
+# Node.js dependencies
 node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VSCode settings (optional)
+.vscode/
+
+# Ignore data files
+python_work/data/
+!python_work/data/.gitkeep  # Optional: to keep the folder structure
+
+# Ignore specific large CSVs if you want to track others manually
 python_work/data/training.1600000.processed.noemoticon.csv
 python_work/data/news_features.csv
+
+# Model files (binary)
+*.pkl
+
+# Logs and system files
+*.log
+.DS_Store
+Thumbs.db

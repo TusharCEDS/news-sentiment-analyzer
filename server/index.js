@@ -6,6 +6,7 @@ const fs = require("fs");
 const path = require("path");
 const csvParser = require("csv-parser");
 
+
 const app = express();
 app.use(cors({ origin: "*", methods: ["GET", "POST"], allowedHeaders: ["Content-Type"] }));
 app.use(express.urlencoded({ extended: true }));
@@ -53,7 +54,6 @@ app.get("/api/sentiment/:category", (req, res) => {
         .on("end", () => res.json(sentimentData))
         .on("error", (err) => res.status(500).json({ error: err.message }));
 });
-
 
 
 // ✅ Middleware to count API requests
@@ -120,14 +120,16 @@ async function makeApiRequest(url) {
 
 // ✅ API - Get All News
 app.get("/api/all-news", async (req, res) => {
-    let pageSize = parseInt(req.query.pageSize) || 80;
+    let pageSize = parseInt(req.query.pageSize) || 10;
     let page = parseInt(req.query.page) || 1;
-    let q = req.query.q || "world"; // Default search query
+    let q = req.query.q || "world"; // default search keyword
 
-    let url = `https://newsapi.org/v2/everything?q=page=${page}&pageSize=${pageSize}&apiKey=${process.env.API_KEY}`;
+    const url = `https://newsapi.org/v2/everything?q=${q}&apiKey=3b32e1eb50eb4f8a9b8b712aec3c1d9a`;
+    
     const result = await makeApiRequest(url);
     res.status(result.status).json(result);
 });
+
 
 // ✅ API - Get Top Headlines
 app.get("/api/top-headlines", async (req, res) => {
@@ -135,7 +137,7 @@ app.get("/api/top-headlines", async (req, res) => {
     let page = parseInt(req.query.page) || 1;
     let category = req.query.category || "general";
 
-    let url = `https://newsapi.org/v2/top-headlines?category=${category}&language=en&page=${page}&pageSize=${pageSize}&apiKey=${process.env.API_KEY}`;
+    let url = `https://newsapi.org/v2/top-headlines?category=${category}&language=en&page=${page}&pageSize=${pageSize}&apiKey=3b32e1eb50eb4f8a9b8b712aec3c1d9a`;
     const result = await makeApiRequest(url);
     res.status(result.status).json(result);
 });
@@ -146,7 +148,7 @@ app.get("/api/country/:iso", async (req, res) => {
     let page = parseInt(req.query.page) || 1;
     const country = req.params.iso;
 
-    let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=${process.env.API_KEY}&page=${page}&pageSize=${pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${country}&apiKey=3b32e1eb50eb4f8a9b8b712aec3c1d9a&page=${page}&pageSize=${pageSize}`;
     const result = await makeApiRequest(url);
     res.status(result.status).json(result);
 });
@@ -161,7 +163,7 @@ app.use((req, res, next) => {
 });
 
 // ✅ Start Server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`🚀 Server is running at http://localhost:${PORT}`);
 });

@@ -43,7 +43,7 @@ function ViewSentiments() {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/sentiment/${category}`);
+      const response = await fetch(`http://localhost:3001/api/sentiment/${category}`);
       if (!response.ok) throw new Error("Failed to fetch sentiment data");
 
       const data = await response.json();

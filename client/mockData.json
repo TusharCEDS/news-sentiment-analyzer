@@ -1,0 +1,10 @@
+{
+  "articles": [
+    {
+      "title": "Sample News",
+      "description": "This is a mock news article",
+      "url": "https://example.com",
+      "urlToImage": "https://example.com/image.jpg"
+    }
+  ]
+}

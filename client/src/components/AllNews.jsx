@@ -10,11 +10,10 @@ function AllNews() {
   const [error, setError] = useState(null);
 
   let pageSize = 12;
-
   useEffect(() => {
     setIsLoading(true);
     setError(null);
-    fetch(`https://news-aggregator-dusky.vercel.app/all-news?page=${page}&pageSize=${pageSize}`)
+    fetch(`http://localhost:3001/api/all-news?page=${page}&pageSize=${pageSize}`)
       .then((response) => {
         if (response.ok) {
           return response.json();
