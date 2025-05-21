@@ -9,15 +9,18 @@ function Header() {
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const [showCategoryDropdown, setShowCategoryDropdown] = useState(false);
   const [theme, setTheme] = useState("light-theme");
+  const [isDark, setIsDark] = useState(false);
 
-  let category = ["business", "entertainment", "general", "health", "science", "sports", "technology", "politics"];
+  const category = ["business", "entertainment", "general", "health", "science", "sports", "technology", "politics"];
 
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
 
   function toggleTheme() {
-    setTheme(theme === "light-theme" ? "dark-theme" : "light-theme");
+    const newTheme = isDark ? "light-theme" : "dark-theme";
+    setTheme(newTheme);
+    setIsDark(!isDark);
   }
 
   return (
@@ -61,7 +64,7 @@ function Header() {
             </ul>
           </li>
 
-          {/* ✅ NEW "View Sentiments" Button ✅ */}
+          {/* View Sentiments */}
           <li>
             <Link className="no-underline font-semibold text-blue-400" to="/view-sentiments">
               View Sentiments
@@ -70,14 +73,12 @@ function Header() {
 
           {/* Theme Toggle */}
           <li>
-            <Link className="no-underline font-semibold" to="#" onClick={toggleTheme}>
-              <input type="checkbox" className="checkbox" id="checkbox" />
-              <label htmlFor="checkbox" className="checkbox-label">
-                <i className="fas fa-moon"></i>
-                <i className="fas fa-sun"></i>
-                <span className="ball"></span>
-              </label>
-            </Link>
+            <input type="checkbox" className="checkbox" id="checkbox" onChange={toggleTheme} checked={isDark} />
+            <label htmlFor="checkbox" className="checkbox-label">
+              <i className="fas fa-sun"></i>
+              <i className="fas fa-moon"></i>
+              <span className="ball"></span>
+            </label>
           </li>
         </ul>
 

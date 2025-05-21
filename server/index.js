@@ -124,7 +124,7 @@ app.get("/api/all-news", async (req, res) => {
     let page = parseInt(req.query.page) || 1;
     let q = req.query.q || "world"; // Default search query
 
-    let url = `https://newsapi.org/v2/everything?q=${q}&page=${page}&pageSize=${pageSize}&apiKey=${process.env.API_KEY}`;
+    let url = `https://newsapi.org/v2/everything?q=page=${page}&pageSize=${pageSize}&apiKey=${process.env.API_KEY}`;
     const result = await makeApiRequest(url);
     res.status(result.status).json(result);
 });

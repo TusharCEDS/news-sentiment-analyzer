@@ -1,0 +1,494 @@
+/* ViewSentiments.css - Ultra-Modern, Glassmorphic, Neumorphic, 2025-Ready */
+
+/* Import Google Fonts - Inter and Orbitron for a futuristic, tech-inspired look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600&display=swap');
+
+:root {
+  --primary-color: #8b5cf6; /* Vivid purple for a futuristic vibe */
+  --primary-dark: #2e1065; /* Deep indigo for high contrast */
+  --positive-color: #06b6d4; /* Bright cyan for positive sentiment */
+  --neutral-color: #f59e0b; /* Vibrant amber for neutral sentiment */
+  --negative-color: #ef4444; /* Bold coral for negative sentiment */
+  --text-primary: #111827; /* Rich slate for readability */
+  --text-secondary: #6b7280; /* Soft gray for secondary text */
+  --bg-gradient: linear-gradient(145deg, #f1f5f9 0%, #e9d5ff 100%); /* Smooth, modern gradient */
+  --bg-glass: rgba(255, 255, 255, 0.55); /* Enhanced glassmorphic transparency */
+  --card-bg: rgba(255, 255, 255, 0.4); /* Lighter card background */
+  --chart-bg: rgba(255, 255, 255, 0.45); /* Chart-specific glass background */
+  --border-color: rgba(229, 231, 235, 0.25); /* Subtle translucent border */
+  --shadow-light: 0 14px 56px rgba(139, 92, 246, 0.15), 0 4px 12px rgba(139, 92, 246, 0.08);
+  --shadow-hover: 0 28px 80px rgba(139, 92, 246, 0.25), 0 8px 20px rgba(139, 92, 246, 0.12);
+  --glow-effect: 0 0 12px rgba(139, 92, 246, 0.2); /* Subtle glow for interactivity */
+  --transition-speed: 0.4s; /* Smoother transitions */
+  --radius-lg: 2.2rem; /* Larger, softer radius */
+  --radius-md: 1.4rem;
+  --radius-sm: 0.9rem;
+  --glass-blur: blur(24px) saturate(175%); /* Stronger glassmorphic blur */
+  --gradient-accent: linear-gradient(90deg, #8b5cf6 0%, #06b6d4 100%); /* Dynamic accent gradient */
+  --gradient-positive: linear-gradient(90deg, #a5f3fc 50%, #cffafe 100%);
+  --gradient-neutral: linear-gradient(90deg, #fef3c7 50%, #fef08a 100%);
+  --gradient-negative: linear-gradient(90deg, #fee2e2 50%, #fecaca 100%);
+  --focus-ring: 0 0 0 5px rgba(139, 92, 246, 0.35); /* Enhanced focus ring */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-gradient);
+  color: var(--text-primary);
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.65;
+  font-size: 16.5px; /* Slightly larger for modern readability */
+  transition: background 0.7s ease-out;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container for layout */
+.container {
+  max-width: 1440px; /* Wider for modern, high-resolution displays */
+  margin: 0 auto;
+  padding: 5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Headings */
+h2, h3, h4, h5 {
+  font-family: 'Orbitron', sans-serif; /* Futuristic font for headings */
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 2rem;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 5px 24px rgba(139, 92, 246, 0.18);
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.7rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+/* Select Box Styling */
+select {
+  appearance: none;
+  background: var(--bg-glass);
+  padding: 1.4rem 2.8rem;
+  font-size: 1.1rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+  min-width: 320px; /* Larger for better usability */
+  color: var(--text-primary);
+  backdrop-filter: var(--glass-blur);
+  background-image:
+    url('data:image/svg+xml;utf8,<svg fill="%236b7280" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1.6rem center;
+  background-size: 1.4em;
+}
+
+select:hover {
+  box-shadow: var(--shadow-hover), var(--glow-effect);
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: var(--focus-ring), var(--glow-effect);
+  background: rgba(243, 232, 255, 0.9);
+}
+
+/* Radio Button Styling (Larger Checkboxes) */
+.radio-options {
+  margin-bottom: 4rem;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.radio-options label {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 2.2rem;
+  border-radius: var(--radius-sm);
+  font-size: 1.15rem; /* Larger for visibility */
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+  background: var(--bg-glass);
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-speed) ease;
+  border: 1px solid var(--border-color);
+  backdrop-filter: var(--glass-blur);
+}
+
+.radio-options input[type="radio"] {
+  accent-color: var(--primary-color);
+  margin-right: 1rem;
+  cursor: pointer;
+  width: 28px; /* Larger radio buttons */
+  height: 28px;
+  transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.radio-options input[type="radio"]:hover {
+  transform: scale(1.2);
+  box-shadow: var(--glow-effect);
+}
+
+.radio-options input[type="radio"]:focus-visible + label {
+  outline: var(--focus-ring);
+}
+
+.radio-options input[type="radio"]:checked + label {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background: rgba(139, 92, 246, 0.15);
+  box-shadow: var(--shadow-hover), var(--glow-effect);
+}
+
+/* Loading Message */
+.loading-message {
+  color: var(--primary-color);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  text-align: center;
+  margin: 4rem 0;
+  animation: pulse 2.2s infinite ease-in-out;
+  letter-spacing: 0.03em;
+  background: var(--bg-glass);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-light);
+  backdrop-filter: var(--glass-blur);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.95); }
+}
+
+/* Chart Containers */
+.chart-container {
+  background: var(--chart-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+  max-width: 480px; /* Slightly larger for modern displays */
+  width: 100%;
+}
+
+.chart-container:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover), var(--glow-effect);
+}
+
+.chart-container canvas {
+  max-height: 320px; /* Slightly larger charts */
+  border-radius: var(--radius-md);
+}
+
+/* Article Card (Larger Size) */
+.article-card {
+  background: var(--card-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-left: 8px solid var(--primary-color); /* Thicker border for emphasis */
+  border-radius: var(--radius-lg);
+  padding: 3.2rem; /* More spacious padding */
+  margin-bottom: 3rem;
+  box-shadow: var(--shadow-light);
+  transition:
+    transform var(--transition-speed) cubic-bezier(0.4, 2.6, 0.6, 1),
+    box-shadow var(--transition-speed) cubic-bezier(0.4, 2.6, 0.6, 1),
+    border-left-color var(--transition-speed) ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  animation: cardFadeIn 1s cubic-bezier(0.4, 2.6, 0.6, 1);
+  min-height: 220px; /* Larger card height */
+}
+
+@keyframes cardFadeIn {
+  from { opacity: 0; transform: translateY(70px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.article-card:hover,
+.article-card:focus-within {
+  transform: translateY(-14px) scale(1.04);
+  box-shadow: var;
+  border-left-color: var(--primary-dark);
+}
+
+.article-card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  z-index: 0;
+  opacity: 0;
+  background: var(--gradient-accent);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  pointer-events: none;
+  transform: scale(0.7);
+}
+
+.article-card:hover::before,
+.article-card:focus-within::before {
+  opacity: 0.2;
+  transform: scale(1);
+}
+
+/* Article Title */
+.article-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.1rem; /* Larger for emphasis */
+  font-weight: 600;
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  user-select: text;
+  position: relative;
+  z-index: 1;
+}
+
+/* Article Description */
+.article-description {
+  font-size: 1.2rem; /* Larger for readability */
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.85;
+  user-select: text;
+  position: relative;
+  z-index: 1;
+}
+
+/* Article Sentiment Labels */
+.article-sentiment {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-light);
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  z-index: 1;
+  border: 1px solid transparent;
+  margin-right: 1.2rem;
+}
+
+.article-sentiment.positive {
+  background: var(--gradient-positive);
+  color: var(--positive-color);
+  border-color: var(--positive-color);
+}
+
+.article-sentiment.neutral {
+  background: var(--gradient-neutral);
+  color: var(--neutral-color);
+  border-color: var(--neutral-color);
+}
+
+.article-sentiment.negative {
+  background: var(--gradient-negative);
+  color: var(--negative-color);
+  border-color: var(--negative-color);
+}
+
+.article-sentiment:hover,
+.article-sentiment:focus {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover), var(--glow-effect);
+}
+
+/* Article Link */
+.article-link {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.35s ease;
+  margin-top: 1.5rem;
+  position: relative;
+  z-index: 1;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1.5rem;
+  background: rgba(139, 92, 246, 0.12);
+}
+
+.article-link:hover,
+.article-link:focus {
+  color: var(--primary-dark);
+  transform: translateX(8px);
+  background: rgba(139, 92, 246, 0.22);
+  box-shadow: var(--shadow-light), var(--glow-effect);
+}
+
+/* No Articles Message */
+.no-articles {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--bg-glass);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-light);
+  backdrop-filter: var(--glass-blur);
+}
+
+/* Select Category and Filter Section */
+.select-category,
+.filter-section {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+
+.select-category label,
+.filter-section span {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.01em;
+  user-select: none;
+}
+
+/* News Heading */
+.news-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  border-bottom: 6px solid var(--primary-color);
+  padding-bottom: 1.4rem;
+  letter-spacing: 0.015em;
+  user-select: none;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Chart-Specific Styling */
+canvas {
+  border-radius: var(--radius-md);
+  transition: transform var(--transition-speed) ease;
+}
+
+.chart-container:hover canvas {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    padding: 3.5rem 1.5rem;
+  }
+  .article-card, .chart-container {
+    padding: 2rem;
+  }
+  .article-title {
+    font-size: 1.7rem;
+  }
+  .article-description {
+    font-size: 1.1rem;
+  }
+  select {
+    min-width: 100%;
+    font-size: 1rem;
+    padding: 1.2rem 2.4rem;
+  }
+  .radio-options label {
+    font-size: 1rem;
+    padding: 0.7rem 1.8rem;
+  }
+  .chart-container {
+    max-width: 100%;
+  }
+}
+
+/* Fluid typography and layout for smaller screens */
+@media (max-width: 600px) {
+  html {
+    font-size: 15.5px;
+  }
+  h2 {
+    font-size: 2.2rem;
+  }
+  .news-heading {
+    font-size: 1.9rem;
+  }
+  .chart-container {
+    padding: 1.8rem;
+  }
+  .article-card {
+    min-height: 180px;
+  }
+}
+
+/* Accessibility focus */
+:focus-visible {
+  outline: var(--focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+/* DARK MODE (optimized for modern displays) */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color: #c4b5fd; /* Lighter violet for dark mode */
+    --primary-dark: #ede9fe;
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --bg-gradient: linear-gradient(145deg, #111827 0%, #312e81 100%);
+    --bg-glass: rgba(31, 41, 55, 0.7);
+    --card-bg: rgba(31, 41, 55, 0.6);
+    --chart-bg: rgba(31, 41, 55, 0.65);
+    --border-color: rgba(75, 85, 99, 0.35);
+    --shadow-light: 0 14px 56px rgba(139, 92, 246, 0.2), 0 4px 12px rgba(139, 92, 246, 0.12);
+    --shadow-hover: 0 28px 80px rgba(139, 92, 246, 0.3), 0 8px 20px rgba(139, 92, 246, 0.18);
+    --glow-effect: 0 0 12px rgba(139, 92, 246, 0.25);
+  }
+  .article-card, .chart-container {
+    border-left-color: var(--primary-color);
+  }
+}
